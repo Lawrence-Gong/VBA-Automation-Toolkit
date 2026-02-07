@@ -27,33 +27,28 @@ Please note that as these projects involve highly confidential business terms, t
 ## 目录 | Table of Contents
 
 ### English Version
-
   - [Project 01: Enterprise Data Transcription Solution](#project-01-en)
     - [Overview](#ov-01-en) | [Context & Challenges](#context-01-en) | [Logic Flow](#flow-01-en) | [Implementations](#impl-01-en) | [Impact](#impact-01-en) |[Technical Deep Dive](#tech-01-en) | [Usage](#use-01-en) | [Tech Stack](#stack-01-en)
   - [Project 02: [Project Name Placeholder]](#project-02-en)
     - [Overview](#ov-02-en) | [Evolution & Context](#context-02-en) | [Logic Flow](#flow-02-en) | [Implementations](#impl-02-en) | [Impact](#impact-02-en) |[Technical Deep Dive](#tech-02-en) | [Usage](#use-02-en) | [Tech Stack](#stack-02-en)
 
 ### 中文版
-
 - [项目一：企业级客户数据自动化转录解决方案](#项目一-cn)
-  - [项目概述](#概述-01-cn) | [业务背景与挑战](#背景-01-cn) | [流程图](#流程图-01-cn) | [核心功能](#功能-01-cn) | [业务产出](#产出-01-cn) | [技术核心解析](#解析-01-cn) | [使用说明](#说明-01-cn)| [技术栈](#技术栈-01-cn) 
+    - [项目概述](#概述-01-cn) | [业务背景与挑战](#背景-01-cn) | [流程图](#流程图-01-cn) | [核心功能](#功能-01-cn) | [业务产出](#产出-01-cn) | [技术核心解析](#解析-01-cn) | [使用说明](#说明-01-cn)| [技术栈](#技术栈-01-cn) 
 - [项目二：[项目名称占位符]](#项目二-cn)
-  - [项目概述](#概述-02-cn) | [业务背景与演进历程](#背景-02-cn) | [流程图](#流程图-02-cn) | [核心功能](#功能-02-cn) | [业务产出](#产出-02-cn) | [技术核心解析](#解析-02-cn) | [使用说明](#说明-02-cn)| [技术栈](#技术栈-02-cn) 
+    - [项目概述](#概述-02-cn) | [业务背景与演进历程](#背景-02-cn) | [流程图](#流程图-02-cn) | [核心功能](#功能-02-cn) | [业务产出](#产出-02-cn) | [技术核心解析](#解析-02-cn) | [使用说明](#说明-02-cn)| [技术栈](#技术栈-02-cn) 
 
 ---
 
 <a name="english-version"></a>
-
 ## English Version
 
 <a name="project-01-en"></a>
-
 ### 1. Project 01: Enterprise Data Transcription Solution
 
 <a name="ov-01-en"></a>
 
 #### **1.1 Overview**
-
 This is a professional automation tool designed to bridge the gap between manual business operations and digital efficiency by transcribing 20,000+ unstructured records into a structured database.
 
 <a name="context-01-en"></a>
@@ -73,7 +68,6 @@ This is a professional automation tool designed to bridge the gap between manual
 <a name="flow-01-en"></a>
 
 #### **1.3 Logic Flowchart**
-
 ```mermaid
   graph LR
     subgraph UI_Interaction [Step 1: UI & Trigger]
@@ -100,11 +94,9 @@ This is a professional automation tool designed to bridge the gap between manual
     style C fill:#fff4dd,stroke:#d4a017
     style I fill:#e1f5fe,stroke:#01579b
 ```
-
 <a name="impl-01-en"></a>
 
 #### **1.4 Key Technical Implementations**
-
 * **Automated Field Mapping**: Established direct cell-to-cell mapping logic to replace manual transcription, ensuring zero displacement of data fields.
 
 * **Dynamic Archiving**: Implemented auto-insertion features to push new entries to the top, facilitating real-time verification and preventing data overwrites.
@@ -130,32 +122,26 @@ This is a professional automation tool designed to bridge the gap between manual
 * **Pioneering Digital Transformation:** Successfully validated the feasibility of using lightweight tools for large-scale data cleansing. This project established the department’s first standardized customer data dictionary, marking a transition from manual labor to automated governance.
 
 <a name="tech-01-en"></a>
-
 #### **1.6 Technical Deep Dive**
-
   * **Decoupled Mapping Engine**: Instead of unstable relative offsets, the code uses explicit cell referencing. This decoupling of UI and Logic ensures that changes in the form layout won't break the database integrity.
-
     ```VB
     Sheets("数据库").Range("C3").Value = Sheets("合同信息").Range("H3").Value
     Sheets("数据库").Range("AK3") = Format(Now, "yyyy-mm-dd hh:mm:ss")
     ```
-
+    
   * **LIFO Archiving Logic**: Utilizing Rows(n).Insert, the tool creates a "Last-In-First-Out" effect. New records push historical data down, preventing the "end-of-row" overwrite risks common in basic VBA scripts.
-
     ```VB
     With Sheets("数据库")
         .Rows(3).Insert
         .Rows(5).Copy .Rows(3)
     ```
-
+  
   * **Pre-archival Sanitization**: Integrated UCase functions and mandatory field validation loops to "clean" data before it hits the database, ensuring indexing fields (like Vendor IDs) remain standardized.
-
     ```VB
     Sheets("合同信息").Range("F3").Value = UCase(Sheets("合同信息").Range("F3").Value)
     ```
 
   * **Business-Driven Hardcoding**: Integrated conditional trigger logic (e.g., for vendors like DELL) to automatically assign static values to specific fields. This minimizes repetitive manual input for standardized vendor attributes and ensures 100% compliance with business-specific data defaults.
-
     ```VB
     ElseIf Range("A2").Value = "VENDOR_P" Then
     Range("I2").Value = ""
@@ -168,37 +154,33 @@ This is a professional automation tool designed to bridge the gap between manual
     Range("Y2").Value = ""
     Range("Z2").Value = "Y"
     ```
-
   * **Full Source Code**: You can find the full source code by visting [this folder](./Project01/Code) or clicking below links:
-
+  
     * **UI Page**: [Click to View](./Project01/Code/UI_Preview.cls)
     * **Datebase Page**: [Click to View](./Project01/Code/Database_Preview.cls)
     * **Data Import Macro**: [Click to View](./Project01/Code/Import_Button.bas)
     * **Clear Form Macro**: [Click to View](./Project01/Code/Clear_Button.bas)
 
 <a name="use-01-en"></a>
-
 #### **1.7 How to Use**
 
-    1. Download the [template](./Project01/Project01_Data_Transcription_Tool.xlsm.xlsm) and ensure Macros are enabled in Excel.
-
-    2. Paste the source Word data into the designated "Input UI" ("合同信息") sheet.
-
-    3. Click the **Submit** ("导入数据") button to archive data and **Clear** ("全部清除") to reset the form for the next entry.
+  1. Download the [template](./Project01/Project01_Data_Transcription_Tool.xlsm.xlsm) and ensure Macros are enabled in Excel.
+    
+  2. Paste the source Word data into the designated "Input UI" ("合同信息") sheet.
+    
+  3. Click the **Submit** ("导入数据") button to archive data and **Clear** ("全部清除") to reset the form for the next entry.
 
 ![A_Usage](./images/A_Usage.gif)
 
   <a name="stack-01-en"></a>
 
 #### 	**1.8 Technical Stack**
-
   * VBA (Excel Macros) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
   * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
 
 ---
 
   <a name="project-02-en"></a>
-
   ### 2. Project 02: Multi-Stage Email Automation System (Evolutionary Suite)
 
 **Note:** This project includes both v1.0 (Legacy) and v2.0 (Advanced) versions. To highlight technical evolution, the following documentation and code analysis are based on v2.0. (Click [here](./Project02/Batch_Email_Sender_v1_Legacy.xlsm) to view the v2.0 overview.)
@@ -329,7 +311,7 @@ graph LR
   * **Risk Mitigation:** By setting a logical interception barrier before the core send command, it allows for a secure preview of results without affecting the underlying data fetching or HTML rendering logic, mitigating compliance risks caused by template errors.
 
 * **COM Interoperability (Late Binding) & Mapping System:**
-  The system utilizes CreateObject("Outlook.Application") for late binding, dispatching COM interfaces without requiring manual references to external type libraries.
+The system utilizes CreateObject("Outlook.Application") for late binding, dispatching COM interfaces without requiring manual references to external type libraries.
 
   ```VB
   Set okapp = CreateObject("Outlook.Application")
@@ -370,9 +352,9 @@ graph LR
     ed = Sheets("Exe").Range("B14").Text
     dls = Sheets("Exe").Range("B11").Text
     sum = Sheets("Exe").Range("B12").Text
-    
+
     ' ...
-    
+
     Set rg = Sheets("SN").Range(dls & "1:" & dls & sum)
     rg.AutoFilter Field:=1, Criteria1:=Sheets("Exe").Range("A1").Value
         Sheets("SN").Select
@@ -385,7 +367,7 @@ graph LR
 * **Event-Driven UI Normalization:** Implements Worksheet_SelectionChange to listen for user input. It triggers the UCase function for instant identifier standardization and updates attachment previews in real-time, providing a "What You See Is What You Get" (WYSIWYG) interactive experience.
 
 * **Full Source Code**: You can find the full source code by visting [this folder](./Project02/Code) or clicking below links:
-
+  
   * **UI Page**: [Click to View](./Project02/Code/Exe_UI.cls)
 
   * **Data Import Macro**: [Click to View](./Project02/Code/Import_Button.bas)
@@ -424,13 +406,10 @@ graph LR
 ## 中文版
 
 <a name="项目一-cn"></a>
-
 ### 1. 项目一：企业级客户数据自动化转录解决方案
 
 <a name="概述-01-cn"></a>
-
 #### **1.1 项目概述**
-
 本工具是一款针对大规模（20,000+条）非结构化表单开发的转录与归档解决方案，实现了从 Word 格式化表单到 Excel 结构化数据库的自动化处理。
 <a name="背景-01-cn"></a>
 
@@ -449,7 +428,6 @@ graph LR
 <a name="流程图-01-cn"></a>
 
 #### **1.3 流程图**
-
 ```mermaid
     graph LR
       subgraph UI_Phase ["第一阶段：交互"]
@@ -478,15 +456,13 @@ graph LR
 ```
 
 <a name="功能-01-cn"></a>
-
 #### **1.4 核心功能实现**
-
 * **自动化字段映射**：通过 VBA 建立 UI 录入区与数据库之间的精确映射，实现一键转录，消除了手动切换窗口的误差。
-
+  
 * **动态归档逻辑**：采用自动插行技术，确保新数据始终置顶，方便实时核对并防止历史记录被覆盖。
-
+  
 * **多维度业务逻辑适配**：针对 DELL、IBM 等 10 余个厂商的特殊规则设计条件触发逻辑，实现业务数据的自动化分类。
-
+  
 * **流程优化机制**：内置必填项验证机制（如厂商名、客户代码）并提供一键清除功能，支持高频连续作业。
 
 ![A_ui_preview](./images/A_ui_preview.png)
@@ -508,16 +484,13 @@ graph LR
 <a name="解析-01-cn"></a>
 
 #### **1.6 技术核心解析**
-
 * **映射引擎原理**：放弃了不稳定的相对位移，采用显式单元格引用。这意味着即使 UI 界面为了美观调整了行列，只需更改映射表即可快速适配，体现了逻辑与界面的解耦思想。
-
   ```VB
   Sheets("数据库").Range("C3").Value = Sheets("合同信息").Range("H3").Value
   Sheets("数据库").Range("AK3") = Format(Now, "yyyy-mm-dd hh:mm:ss")
   ```
-
+  
 * **堆栈式归档**：通过 Rows.Insert 模拟堆栈操作。新记录入库时，旧记录自动下移。这种设计避免了传统 VBA 修改末行记录时可能发生的覆盖风险。
-
   ```VB
   With Sheets("数据库")
       .Rows(3).Insert
@@ -525,13 +498,10 @@ graph LR
   ```
 
 * **源头质量控制**：在入库前通过 UCase 和逻辑判断进行“输入清洗”，确保了诸如供应商 ID 等关键索引字段的标准化。
-
   ```VB
   Sheets("合同信息").Range("F3").Value = UCase(Sheets("合同信息").Range("F3").Value)
   ```
-
 * **业务驱动的自动赋值**：针对特定厂商（如 DELL）设计了条件触发硬编码逻辑。对于某些固定字段，系统会自动判定并填充预设值（如 Y/N 标识），极大减少了业务员处理标准化合同时的重复操作，从技术底层确保了业务规则的刚性执行。
-
   ```VB
   ElseIf Range("A2").Value = "VENDOR_P" Then
   Range("I2").Value = ""
@@ -546,7 +516,7 @@ graph LR
   ```
 
 * **完整代码**：可访问[此文件夹](./Project01/Code)或点击以下链接查看：
-
+  
   * **信息表主页**: [点击查看](./Project01/Code/UI_Preview.cls)
   * **数据库**: [点击查看](./Project01/Code/Database_Preview.cls)
   * **数据导入按钮**: [点击查看](./Project01/Code/Import_Button.bas)
@@ -555,36 +525,30 @@ graph LR
 <a name="说明-01-cn"></a>
 
 #### **1.7 使用说明**
-
 1. 下载[文件](./Project01/Project01_Data_Transcription_Tool.xlsm.xlsm)并启用 Excel 宏。
-
+   
 2. 将 Word 表格数据粘贴至输入工作表的指定区域。
-
+   
 3. 点击“导入数据”完成归档，点击“全部清除”开始下一条录入。
 
 ![A_Usage](./images/A_Usage.gif)
 
 #### **1.8 技术栈**
-
 * VBA (Excel宏) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
 * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
 
 ---
 
 <a name="项目二-cn"></a>
-
 ### 2. 项目二：多阶段邮件自动化分发系统（演进套件）
 
 **注：**本项目资源文件夹中包含 v1.0（团队通用版）与 v2.0（进阶自用版）两个文件。为聚焦技术演进，本说明文档及后续代码解析均以 v2.0 版本为例（旧版项目可点击[此处](./Project02/Batch_Email_Sender_v1_Legacy.xlsm)查看）。
 
 <a name="概述-02-cn"></a>
-
 #### **2.1 项目概述**
-
 本项目实现了一套基于 VBA 的全链路自动化邮件分发工作流。系统核心逻辑涵盖了从大型原始数据集（Master Data）中进行维度筛选、动态创建独立附件工作簿、调用 Outlook 对象模型执行个性化分发、以及任务完成后的本地缓存物理清理。该工具旨在通过程序化手段替代高频的人工拆表、命名与发送操作，实现业务分发的标准化。
 
 <a name="背景-02-cn"></a>
-
 #### **2.2 业务背景**
 
 * **v1.0 标准化分发 (2022年初)：**
@@ -604,9 +568,7 @@ graph LR
   * **困难：** 这是典型的“一对多”个性化分发。若采用传统筛选法，需进行“手动筛选、新建表、重命名存盘、撰写邮件、挂载附件”这一闭环操作并重复十余次。在数千行数据的压力下，人工操作极易导致“数据串门”（将 A 销售的数据发给 B 销售），这在商业环境中属于严重的数据安全合规风险。
 
 <a name="流程图-02-cn"></a>
-
 #### **2.3 流程图**
-
 ```mermaid
 graph LR
     subgraph Init [1. 初始化与参数抓取]
@@ -703,7 +665,6 @@ graph LR
   * **风险防范机制：** 通过在核心发送命令前设置物理层面的逻辑拦截屏障，允许在不影响底层数据抓取、工作簿生成及 HTML 渲染逻辑的前提下，实现对分发结果的安全预览。这有效规避了由于模板配置错误、HTML 逻辑故障或附件关联异常导致的合规风险。
 
 * **双层 UI 联动与实时规范化：** 通过 Worksheet_SelectionChange 事件实时监听用户输入。在交互阶段即时触发 UCase 函数对标识符进行标准化对齐，并实时更新附件名预览，实现了“所见即所得”的前端交互体验。
-
   ```VB
   Private Sub Worksheet_SelectionChange(ByVal Target As Range)
       Sheets("Exe").Range("B11").Value = UCase(Sheets("Exe").Range("B11").Value)
@@ -722,15 +683,14 @@ graph LR
   * **动态范围定义：** 系统从 UI 界面读取 st（起始列索引）与 ed（结束列索引）变量，通过 Cells(1, st) 与 Cells(1, ed) 动态锁定 EntireColumn。
 
   * **筛选与注入逻辑：** 通过 dls（筛选列标识）定位 SN 表的基准范围，在执行 AutoFilter 筛选后，仅对用户定义的动态列范围执行 Copy 操作并注入至新创建的 Workbook 对象中。该设计使得工具无需修改底层代码即可灵活适配字段增减。
-
   ```VB
   st = Sheets("Exe").Range("B13").Text
   ed = Sheets("Exe").Range("B14").Text
   dls = Sheets("Exe").Range("B11").Text
   sum = Sheets("Exe").Range("B12").Text
-  
+
   ' ...
-  
+
   Set rg = Sheets("SN").Range(dls & "1:" & dls & sum)
   rg.AutoFilter Field:=1, Criteria1:=Sheets("Exe").Range("A1").Value
       Sheets("SN").Select
@@ -758,7 +718,6 @@ graph LR
       .send
   End With
   ```
-
   其属性构造逻辑如下：
 
   * **对象解耦机制：** 后期绑定确保了代码在不同 Office 版本间的向下兼容性，避免了因引用库版本冲突导致的编译中断（鲁棒性增强）。
@@ -774,13 +733,12 @@ graph LR
     * **HTML 内容渲染：**　直接将 Excel 单元格中的 HTML 字符串片段与 Outlook 默认签名进行逻辑拼合，并赋值给 HTMLBody 属性，实现排版格式的跨平台一致性。
 
 * **完整代码**：可访问[此文件夹](./Project02/Code)或点击以下链接查看：
-
+  
   * **Exe表主页**: [点击查看](./Project02/Code/Exe_UI.cls)
 
   * **数据导入按钮**: [点击查看](./Project02/Code/Import_Button.bas)
 
 <a name="说明-02-cn"></a>
-
 #### **2.7 使用说明**
 
 1. 下载[文件](./Project02/Dynamic_Data_Distributor_v2_General.xlsm)并启用 Excel 宏。
@@ -796,13 +754,9 @@ graph LR
 <a name="技术栈-02-cn"></a>
 
 #### **2.8 技术栈**
-
 * VBA (Excel宏) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
 * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
 
 * Microsoft Office 对象模型 ![Excel](https://img.shields.io/badge/Platform-MS_Office-red)
 
 * HTML/CSS (邮件模板排版) ![Excel](https://img.shields.io/badge/Platform-HTML_/_CSS-yellow)
-
-
-
