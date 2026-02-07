@@ -29,13 +29,13 @@ Please note that as these projects involve highly confidential business terms, t
 ### English Version
   - [Project 01: Enterprise Data Transcription Solution](#project-01-en)
     - [Overview](#ov-01-en) | [Context & Challenges](#context-01-en) | [Logic Flow](#flow-01-en) | [Implementations](#impl-01-en) | [Impact](#impact-01-en) |[Technical Deep Dive](#tech-01-en) | [Usage](#use-01-en) | [Tech Stack](#stack-01-en)
-  - [Project 02: [Project Name Placeholder]](#project-02-en)
+  - [Project 02: Multi-Stage Email Automation System (Evolutionary Suite)](#project-02-en)
     - [Overview](#ov-02-en) | [Evolution & Context](#context-02-en) | [Logic Flow](#flow-02-en) | [Implementations](#impl-02-en) | [Impact](#impact-02-en) |[Technical Deep Dive](#tech-02-en) | [Usage](#use-02-en) | [Tech Stack](#stack-02-en)
 
 ### 中文版
 - [项目一：企业级客户数据自动化转录解决方案](#项目一-cn)
     - [项目概述](#概述-01-cn) | [业务背景与挑战](#背景-01-cn) | [流程图](#流程图-01-cn) | [核心功能](#功能-01-cn) | [业务产出](#产出-01-cn) | [技术核心解析](#解析-01-cn) | [使用说明](#说明-01-cn)| [技术栈](#技术栈-01-cn) 
-- [项目二：[项目名称占位符]](#项目二-cn)
+- [项目二：多阶段邮件自动化分发系统（演进套件）](#项目二-cn)
     - [项目概述](#概述-02-cn) | [业务背景与演进历程](#背景-02-cn) | [流程图](#流程图-02-cn) | [核心功能](#功能-02-cn) | [业务产出](#产出-02-cn) | [技术核心解析](#解析-02-cn) | [使用说明](#说明-02-cn)| [技术栈](#技术栈-02-cn) 
 
 ---
@@ -760,3 +760,4 @@ graph LR
 * Microsoft Office 对象模型 ![Excel](https://img.shields.io/badge/Platform-MS_Office-red)
 
 * HTML/CSS (邮件模板排版) ![Excel](https://img.shields.io/badge/Platform-HTML_/_CSS-yellow)
+
