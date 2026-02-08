@@ -69,7 +69,7 @@ This is a professional automation tool designed to bridge the gap between manual
 
 #### **1.3 Logic Flowchart**
 
-**Note:** If below code can not be rendered in an iOS mobile environment，you may click [here](./images/01_chart_en.svg) to view the pic.
+  **Note:** If below code can not be rendered in an iOS mobile environment，you may click [here](./images/01_chart_en.svg) to view the pic.
 ```mermaid
 graph LR
     subgraph UI_Interaction [Step 1: UI & Trigger]
@@ -99,6 +99,7 @@ graph LR
 <a name="impl-01-en"></a>
 
 #### **1.4 Key Technical Implementations**
+
 * **Automated Field Mapping**: Established direct cell-to-cell mapping logic to replace manual transcription, ensuring zero displacement of data fields.
 
 * **Dynamic Archiving**: Implemented auto-insertion features to push new entries to the top, facilitating real-time verification and preventing data overwrites.
@@ -124,7 +125,9 @@ graph LR
 * **Pioneering Digital Transformation:** Successfully validated the feasibility of using lightweight tools for large-scale data cleansing. This project established the department’s first standardized customer data dictionary, marking a transition from manual labor to automated governance.
 
 <a name="tech-01-en"></a>
+
 #### **1.6 Technical Deep Dive**
+
   * **Decoupled Mapping Engine**: Instead of unstable relative offsets, the code uses explicit cell referencing. This decoupling of UI and Logic ensures that changes in the form layout won't break the database integrity.
     ```VB
     Sheets("数据库").Range("C3").Value = Sheets("合同信息").Range("H3").Value
@@ -164,6 +167,7 @@ graph LR
     * **Clear Form Macro**: [Click to View](./Project01/Code/Clear_Button.bas)
 
 <a name="use-01-en"></a>
+
 #### **1.7 How to Use**
 
   1. Download the [template](./Project01/Project01_Data_Transcription_Tool.xlsm.xlsm) and ensure Macros are enabled in Excel.
@@ -177,25 +181,27 @@ graph LR
   <a name="stack-01-en"></a>
 
 #### 	**1.8 Technical Stack**
+
   * VBA (Excel Macros) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
   * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
 
 ---
 
-  <a name="project-02-en"></a>
-  ### 2. Project 02: Multi-Stage Email Automation System (Evolutionary Suite)
+<a name="project-02-en"></a>
+
+### 2. Project 02: Multi-Stage Email Automation System (Evolutionary Suite)
 
 **Note:** This project includes both v1.0 (Legacy) and v2.0 (Advanced) versions. To highlight technical evolution, the following documentation and code analysis are based on v2.0. (Click [here](./Project02/Batch_Email_Sender_v1_Legacy.xlsm) to view the v2.0 overview.)
 
 <a name="ov-02-en"></a>
 
-  #### **2.1 Overview**
+#### **2.1 Overview**
 
 This project implements a full-lifecycle email automation workflow powered by VBA. The core logic encompasses dimensional filtering from master datasets, dynamic generation of individual attachment workbooks, personalized dispatching via the Outlook object model, and physical cleanup of local caches upon task completion. The tool is designed to replace high-frequency manual operations—such as report splitting, renaming, and file mounting—with a standardized, programmatic process.
 
 <a name="context-02-en"></a>
 
-  #### **2.2 Evolution & Business Context**
+#### **2.2 Evolution & Business Context**
 
   * **v1.0 Standardized Dispatch (Early 2022):**
 
@@ -217,7 +223,7 @@ This project implements a full-lifecycle email automation workflow powered by VB
 
 #### **2.3 Logic Flowchart**
 
-**Note:** If below code can not be rendered in an iOS mobile environment，you may click [here](./images/02_chart_en.svg) to view the pic.
+  **Note:** If below code can not be rendered in an iOS mobile environment，you may click [here](./images/02_chart_en.svg) to view the pic.
 
 ```mermaid
 graph LR
@@ -396,7 +402,9 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 
 * VBA (Excel & Outlook Integration) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
 * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
+
 * Microsoft Office Object Model ![Excel](https://img.shields.io/badge/Platform-MS_Office-red)
+
 * HTML/CSS (Email Template Design) ![Excel](https://img.shields.io/badge/Platform-HTML_/_CSS-yellow)
 
 ---
@@ -463,7 +471,9 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 ```
 
 <a name="功能-01-cn"></a>
+
 #### **1.4 核心功能实现**
+
 * **自动化字段映射**：通过 VBA 建立 UI 录入区与数据库之间的精确映射，实现一键转录，消除了手动切换窗口的误差。
   
 * **动态归档逻辑**：采用自动插行技术，确保新数据始终置顶，方便实时核对并防止历史记录被覆盖。
@@ -491,6 +501,7 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 <a name="解析-01-cn"></a>
 
 #### **1.6 技术核心解析**
+
 * **映射引擎原理**：放弃了不稳定的相对位移，采用显式单元格引用。这意味着即使 UI 界面为了美观调整了行列，只需更改映射表即可快速适配，体现了逻辑与界面的解耦思想。
   ```VB
   Sheets("数据库").Range("C3").Value = Sheets("合同信息").Range("H3").Value
@@ -532,6 +543,7 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 <a name="说明-01-cn"></a>
 
 #### **1.7 使用说明**
+
 1. 下载[文件](./Project01/Project01_Data_Transcription_Tool.xlsm.xlsm)并启用 Excel 宏。
    
 2. 将 Word 表格数据粘贴至输入工作表的指定区域。
@@ -541,40 +553,46 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 ![A_Usage](./images/A_Usage.gif)
 
 #### **1.8 技术栈**
+
 * VBA (Excel宏) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
 * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
 
 ---
 
 <a name="项目二-cn"></a>
+
 ### 2. 项目二：多阶段邮件自动化分发系统（演进套件）
 
 **注：**本项目资源文件夹中包含 v1.0（团队通用版）与 v2.0（进阶自用版）两个文件。为聚焦技术演进，本说明文档及后续代码解析均以 v2.0 版本为例（旧版项目可点击[此处](./Project02/Batch_Email_Sender_v1_Legacy.xlsm)查看）。
 
 <a name="概述-02-cn"></a>
+
 #### **2.1 项目概述**
+
 本项目实现了一套基于 VBA 的全链路自动化邮件分发工作流。系统核心逻辑涵盖了从大型原始数据集（Master Data）中进行维度筛选、动态创建独立附件工作簿、调用 Outlook 对象模型执行个性化分发、以及任务完成后的本地缓存物理清理。该工具旨在通过程序化手段替代高频的人工拆表、命名与发送操作，实现业务分发的标准化。
 
 <a name="背景-02-cn"></a>
+
 #### **2.2 业务背景**
 
-* **v1.0 标准化分发 (2022年初)：**
+  * **v1.0 标准化分发 (2022年初)：**
 
-  * **场景：** 服务于前司销售运营团队使用邮件向客户群体的业务提醒任务。
+    * **场景：** 服务于前司销售运营团队使用邮件向客户群体的业务提醒任务。
 
-  * **逻辑：** 实现了基于固定清单和统一 PDF 附件的自动化群发逻辑，解决了从手工发送到批量处理的初级转化。
+    * **逻辑：** 实现了基于固定清单和统一 PDF 附件的自动化群发逻辑，解决了从手工发送到批量处理的初级转化。
 
-* **v2.0 动态定制分发 (2022年中)：**
+  * **v2.0 动态定制分发 (2022年中)：**
 
-  * **背景：** 在业务运营阶段，我需要管理一份包含公司客户产品数据的汇总大表，并根据销售归属，定期将特定数据分发给 10 余位销售代表进行商务跟进。该表格会根据业务情况动态更新，每次涵盖数据平均约 2,000 余行。
+    * **背景：** 在业务运营阶段，我需要管理一份包含公司客户产品数据的汇总大表，并根据销售归属，定期将特定数据分发给 10 余位销售代表进行商务跟进。该表格会根据业务情况动态更新，每次涵盖数据平均约 2,000 余行。
 
-  * **演进历程：** 在 v1.0 标准化分发的逻辑基础上进行了深度重构，引入了“动态数据分区引擎”。该引擎支持根据不同的接收者需求，实时生成定制化的数据附件，实现了从“统一附件群发”向“个性化数据推送”的技术跨越。
+    * **演进历程：** 在 v1.0 标准化分发的逻辑基础上进行了深度重构，引入了“动态数据分区引擎”。该引擎支持根据不同的接收者需求，实时生成定制化的数据附件，实现了从“统一附件群发”向“个性化数据推送”的技术跨越。
 
-  * **痛点：** 商务侧对数据隐私有极高要求，每位销售代表仅能看到其名下的商机。此外，为了方便销售人员后续存档，分发的附件名必须严格包含销售姓名、日期及具体产品线。
+    * **痛点：** 商务侧对数据隐私有极高要求，每位销售代表仅能看到其名下的商机。此外，为了方便销售人员后续存档，分发的附件名必须严格包含销售姓名、日期及具体产品线。
 
-  * **困难：** 这是典型的“一对多”个性化分发。若采用传统筛选法，需进行“手动筛选、新建表、重命名存盘、撰写邮件、挂载附件”这一闭环操作并重复十余次。在数千行数据的压力下，人工操作极易导致“数据串门”（将 A 销售的数据发给 B 销售），这在商业环境中属于严重的数据安全合规风险。
+    * **困难：** 这是典型的“一对多”个性化分发。若采用传统筛选法，需进行“手动筛选、新建表、重命名存盘、撰写邮件、挂载附件”这一闭环操作并重复十余次。在数千行数据的压力下，人工操作极易导致“数据串门”（将 A 销售的数据发给 B 销售），这在商业环境中属于严重的数据安全合规风险。
 
 <a name="流程图-02-cn"></a>
+
 #### **2.3 流程图**
 
 **注：** 若在iOS移动端无法成功渲染以下代码，可点击[此处](./images/02_chart_cn.svg)查看图片。
@@ -687,7 +705,6 @@ graph LR
   End Sub
   ```
 
-
 * **参数化列范围控制：** 为了适配不同维度的业务大表，系统摒弃了硬编码范围，采用了参数化取值规则：
 
   * **动态范围定义：** 系统从 UI 界面读取 st（起始列索引）与 ed（结束列索引）变量，通过 Cells(1, st) 与 Cells(1, ed) 动态锁定 EntireColumn。
@@ -749,6 +766,7 @@ graph LR
   * **数据导入按钮**: [点击查看](./Project02/Code/Import_Button.bas)
 
 <a name="说明-02-cn"></a>
+
 #### **2.7 使用说明**
 
 1. 下载[文件](./Project02/Dynamic_Data_Distributor_v2_General.xlsm)并启用 Excel 宏。
@@ -764,7 +782,10 @@ graph LR
 <a name="技术栈-02-cn"></a>
 
 #### **2.8 技术栈**
+
 * VBA (Excel宏) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
 * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
+
 * Microsoft Office 对象模型 ![Excel](https://img.shields.io/badge/Platform-MS_Office-red)
+
 * HTML/CSS (邮件模板排版) ![Excel](https://img.shields.io/badge/Platform-HTML_/_CSS-yellow)
