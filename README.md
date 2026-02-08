@@ -68,8 +68,10 @@ This is a professional automation tool designed to bridge the gap between manual
 <a name="flow-01-en"></a>
 
 #### **1.3 Logic Flowchart**
+
+**Note:** If below code can not be rendered in an iOS mobile environment，you may click [here](./images/01_chart_en.svg) to view the pic.
 ```mermaid
-  graph LR
+graph LR
     subgraph UI_Interaction [Step 1: UI & Trigger]
     A([Start Entry]) --> B[Paste Word Data to UI]
     B --> C{Click Import}
@@ -214,6 +216,8 @@ This project implements a full-lifecycle email automation workflow powered by VB
 <a name="flow-02-en"></a>
 
 #### **2.3 Logic Flowchart**
+
+**Note:** If below code can not be rendered in an iOS mobile environment，you may click [here](./images/02_chart_en.svg) to view the pic.
 
 ```mermaid
 graph LR
@@ -392,9 +396,7 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 
 * VBA (Excel & Outlook Integration) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
 * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
-
 * Microsoft Office Object Model ![Excel](https://img.shields.io/badge/Platform-MS_Office-red)
-
 * HTML/CSS (Email Template Design) ![Excel](https://img.shields.io/badge/Platform-HTML_/_CSS-yellow)
 
 ---
@@ -409,7 +411,9 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 ### 1. 项目一：企业级客户数据自动化转录解决方案
 
 <a name="概述-01-cn"></a>
+
 #### **1.1 项目概述**
+
 本工具是一款针对大规模（20,000+条）非结构化表单开发的转录与归档解决方案，实现了从 Word 格式化表单到 Excel 结构化数据库的自动化处理。
 <a name="背景-01-cn"></a>
 
@@ -428,6 +432,9 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 <a name="流程图-01-cn"></a>
 
 #### **1.3 流程图**
+
+**注：**若在iOS移动端无法成功渲染以下代码，可点击[此处](./images/01_chart_cn.svg)查看图片。
+
 ```mermaid
     graph LR
       subgraph UI_Phase ["第一阶段：交互"]
@@ -569,6 +576,9 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 
 <a name="流程图-02-cn"></a>
 #### **2.3 流程图**
+
+**注：** 若在iOS移动端无法成功渲染以下代码，可点击[此处](./images/02_chart_cn.svg)查看图片。
+
 ```mermaid
 graph LR
     subgraph Init [1. 初始化与参数抓取]
@@ -756,8 +766,5 @@ graph LR
 #### **2.8 技术栈**
 * VBA (Excel宏) ![VBA](https://img.shields.io/badge/Language-VBA-blue)
 * Microsoft Excel ![Excel](https://img.shields.io/badge/Platform-Excel-green)
-
 * Microsoft Office 对象模型 ![Excel](https://img.shields.io/badge/Platform-MS_Office-red)
-
 * HTML/CSS (邮件模板排版) ![Excel](https://img.shields.io/badge/Platform-HTML_/_CSS-yellow)
-
