@@ -122,7 +122,9 @@ graph LR
 
 * **Accuracy of Data Assets:** Automated execution eliminated inevitable manual errors (such as digit errors in phone numbers or column offsets), guaranteeing a high success rate for customer outreach in subsequent marketing phases.
 
-* **Pioneering Digital Transformation:** Successfully validated the feasibility of using lightweight tools for large-scale data cleansing. This project established the department’s first standardized customer data dictionary, marking a transition from manual labor to automated governance.
+* **Pioneering Digital Transformation:** Successfully validated the feasibility of using lightweight tools for large-scale data cleansing. This project established the department’s first standardized customer data dictionary, marking a transition from manual labor to automated governance. By unlocking the untapped potential of legacy infrastructure, I implemented a zero-cost, real-time automation framework, proving that significant digital transformation is achievable even under strict administrative constraints.
+
+* **Professional Recognition:** Obtained written praises in an email sent to me by my manager.
 
 <a name="tech-01-en"></a>
 
@@ -494,7 +496,7 @@ The system utilizes CreateObject("Outlook.Application") for late binding, dispat
 
 * **保障数据资产准确性：** 代码执行规避了人工录入中不可避免的失误（如电话号码位数错误、列对齐偏移），确保了后续商务营销阶段客户触达的成功率。
 
-* **数字化转型初试：** 成功验证了利用轻量化工具解决大规模数据清洗任务的可行性，为部门建立了第一套标准化的客户数据字典，实现了从手工劳动向自动化治理的跨越。
+* **数字化转型初试：** 成功验证了利用轻量化工具解决大规模数据清洗任务的可行性，为部门建立了第一套标准化的客户数据字典，实现了从手工劳动向自动化治理的跨越。同时在高度合规且受限的商务环境下，通过深度挖掘企业现有基础设施的潜力，实现了零成本、高即时性的自动化转型。
 
 * **职业认可**：作为部门数字化转型的成功实践，获得了部门负责人的书面邮件表扬。
 
@@ -789,3 +791,4 @@ graph LR
 * Microsoft Office 对象模型 ![Excel](https://img.shields.io/badge/Platform-MS_Office-red)
 
 * HTML/CSS (邮件模板排版) ![Excel](https://img.shields.io/badge/Platform-HTML_/_CSS-yellow)
+
